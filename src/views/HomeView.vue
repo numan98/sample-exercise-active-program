@@ -22,13 +22,13 @@ function enrolToProgram(programId) {
   <main>
     <section>
       <h2>Enrolled Programs</h2>
-      <div class="enrolled-programs-grid" v-if="enrolledPrograms?.length > 0">
-        <EnrolledProgram
-          :program="program"
-          v-for="program in enrolledPrograms"
-          :key="program.id"
-        />
-      </div>
+        <TransitionGroup name="list" v-if="enrolledPrograms?.length > 0" class="enrolled-programs-grid" tag="div">
+          <EnrolledProgram
+            :program="program"
+            v-for="program in enrolledPrograms"
+            :key="program.id"
+          />
+        </TransitionGroup>
       <p v-else>
         You have not enrolled in any Programs yet. Click on a Program below to
         enrol.
@@ -67,4 +67,17 @@ h2 {
   grid-template-columns: 1fr 1fr;
   gap: 20px;
 }
+
+.list-move, /* apply transition to moving elements */
+.list-enter-active,
+.list-leave-active {
+  transition: all 0.5s ease;
+}
+
+.list-enter-from,
+.list-leave-to {
+  opacity: 0;
+  transform: translateX(10px);
+}
+
 </style>

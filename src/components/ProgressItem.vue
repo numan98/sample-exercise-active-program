@@ -68,6 +68,8 @@ const props = defineProps({
         left: 0;
         height: 100%;
         border-radius: 3px;
+        width: 0;
+        transition: width ease-in-out 800ms;
       }
     }
   }
