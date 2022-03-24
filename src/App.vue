@@ -20,6 +20,8 @@ import { RouterView } from "vue-router";
 
 <style>
 @import "@/assets/base.css";
+@import "@/assets/colors.css";
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
 
 #app {
   max-width: 1280px;

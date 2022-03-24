@@ -1,10 +1,10 @@
 import { describe, it, expect } from "vitest";
 import { mount } from "@vue/test-utils";
-import ProgramTile from "../ProgramTile.vue";
+import EnrolledProgram from "../EnrolledProgram.vue";
 
-describe("ProgramTile", () => {
+describe("EnrolledProgram", () => {
   it("renders properly", () => {
-    const wrapper = mount(ProgramTile, {
+    const wrapper = mount(EnrolledProgram, {
       props: { program: { title: "Example Program" } },
     });
     expect(wrapper.text()).toContain("Example Program");
